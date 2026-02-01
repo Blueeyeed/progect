@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Олимпиадное программирование - Telegram Bot <br> Дополнительные материалы к боту  </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem 0;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        h1 {
+            font-size: 1.5rem;    
+            color: var(--text-primary);
+                }
+        .subtitle {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+        main {
+            padding: 3rem 0;
+        }
+        .intro {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .intro-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            margin: 0 1rem;
+        }
+        .intro h2 {
+            font-size: 1.875rem;
+            margin-bottom: 0.75rem;
+        }
+        .guides-grid {
+            display: grid;
+        }
+        @media (min-width: 1024px) {
+            .guides-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .guide-section {
+            gap: 1.5rem;
+        }
+        .guide-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .guide-icon {
+            font-size: 2.25rem;
+        }
+        .guide-title {
+            font-size: 1.875rem;
+            font-weight: 700;
+        }
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .video-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .video-card {
+            border-radius: 0.5rem;
+            padding: 1rem;
+            transition: all 0.2s;
+            box-shadow: var(--shadow);
+        }
+        .video-card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+        .video-link {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+        .play-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            flex-shrink: 0;
+            margin-top: 0.125rem;
+        }
+        .play-icon.beginner {
+            color: var(--blue);
+        }
+        .play-icon.olympiad {
+            color: var(--purple);
+        }
+        .video-content {
+            flex: 1;
+            min-width: 0;
+        }
+        .video-title {
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .video-duration {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+        .external-icon {
+            width: 1rem;
+            height: 1rem;
+            color: var(--text-muted);
+            flex-shrink: 0;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .video-link:hover .external-icon {
+            opacity: 1;
+        }
+        footer {  
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+            padding: 2rem 0;    
+        }
+        .footer-content {
+            text-align: center;
+            color: var(--text-secondary);
+        }
+        .footer-content p {
+            margin-bottom: 0.5rem;
+        }
+        .footer-content p:last-child {
+            font-size: 0.875rem;
+            margin-bottom: 0;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="header-left">
+                    <div>
+                        <h1>Олимпиадное программирование</h1>
+                        <div class="subtitle">Дополнительные материалы к Telegram-боту</div>
+                    </div>
+                </div>             
+                    <svg id="sunIcon" class="hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="intro">
+                <svg class="intro-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                </svg>
+                <h2>Видеоуроки по программированию</h2>
+                <p>Комплексные руководства по Python и C++ для подготовки к олимпиадам по программированию.</p>
+            </div>
+            <div class="guides-grid">
+                <!-- Python Section -->
+                <div class="guide-section">
+                    <div class="guide-header">
+                        <span class="guide-icon">🐍</span>
+                        <h2 class="guide-title">Python</h2>
+                    </div>
+
+                    <div>
+                        <h3 class="section-title beginner">Начало работы</h3>
+                        <div class="video-list">
+                            <div class="video-card">
+                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="video-link">
+                                    <svg class="play-icon beginner" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <div class="video-content">
+                                        <p class="video-title beginner">Python для начинающих - Установка и первая программа</p>
+                                        <p class="video-duration">25 мин</p>
+                                    </div>
+                                    <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="video-card">
+                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="video-link">
+                                    <svg class="play-icon beginner" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <div class="video-content">
+                                        <p class="video-title beginner">Основы синтаксиса Python - Переменные и типы данных</p>
+                                        <p class="video-duration">30 мин</p>
+                                    </div>
+                                    <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="video-card">
+                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="video-link">
+                                    <svg class="play-icon beginner" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <div class="video-content">
+                                        <p class="video-title beginner">Условия и циклы в Python</p>
+                                        <p class="video-duration">35 мин</p>
+                                    </div>
+                                    <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="video-card">
+                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="video-link">
+                                    <svg class="play-icon beginner" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <div class="video-content">
+                                        <p class="video-title beginner">Функции и модули</p>
+                                        <p class="video-duration">28 мин</p>
+                                    </div>
+                                    <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="video-card">
+                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="video-link">
+                                    <svg class="play-icon beginner" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <div class="video-content">
+                                        <p class="video-title beginner">Списки, кортежи и словари</p>
+                                        <p class="video-duration">40 мин</p>
+                                    </div>
+                                    <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="section-title olympiad">Олимпиадные задачи</h3>
+                        <div class="video-list">
+                            <div class="video-card">
+                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="video-link">
+                                    <svg class="play-icon olympiad" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <div class="video-content">
+                                        <p class="video-title olympiad">Алгоритмы сортировки на Python</p>
+                                        <p class="video-duration">45 мин</p>
+                                    </div>
+                                    <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="video-card">
+                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="video-link">
+                                    <svg class="play-icon olympiad" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <div class="video-content">
+                                        <p class="video-title olympiad">Динамическое программирование - Введение</p>
+                                        <p class="video-duration">50 мин</p>
+                                    </div>
+                                    <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="video-card">
+                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="video-link">
+                                    <svg class="play-icon olympiad" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <div class="video-content">
+                                        <p class="video-title olympiad">Рекурсия и задачи на рекурсию</p>
+                                        <p class="video-duration">42 мин</p>
+                                    </div>
+                                    <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="video-card">
+                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="video-link">
+                                    <svg class="play-icon olympiad" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <div class="video-content">
+                                        <p class="video-title olympiad">Графы и обход графов (DFS, BFS)</p>
+                                        <p class="video-duration">55 мин</p>
+                                    </div>
+                                    <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="video-card">
+                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="video-link">
+                                    <svg class="play-icon olympiad" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <div class="video-content">
+                                        <p class="video-title olympiad">Жадные алгоритмы и задачи</p>
+                                        <p class="video-duration">38 мин</p>
+                                    </div>
+                                    <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="video-card">
+                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" class="video-link">
+                                    <svg class="play-icon olympiad" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <div class="video-content">
+                                        <p class="video-title olympiad">Двоичный поиск и его применение</p>
+                                        <p class="video-duration">35 мин</p>
+                                    </div>
+                                    <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="guide-section">
+                    <div class="guide-header">
+                        <span class="guide-icon">⚡</span>
+                        <h2 class="guide-title">C++</h2>
+                    </div>
+
+                    <div>
+                       <h3 class="section-title beginner">Начало работы</h3>
+<div class="video-list">
+    <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="video-link">
+            <svg class="play-icon beginner" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <div class="video-content">
+                <p class="video-title beginner">C++ для начинающих - Установка компилятора и IDE</p>
+                <p class="video-duration">22 мин</p>
+            </div>
+            <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+        </a>
+    </div>
+    <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="video-link">
+            <svg class="play-icon beginner" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <div class="video-content">
+                <p class="video-title beginner">Основы C++ - Переменные, типы данных, ввод-вывод</p>
+                <p class="video-duration">32 мин</p>
+            </div>
+            <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+        </a>
+    </div>
+    <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="video-link">
+            <svg class="play-icon beginner" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <div class="video-content">
+                <p class="video-title beginner">Условные операторы и циклы в C++</p>
+                <p class="video-duration">38 мин</p>
+            </div>
+            <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+        </a>
+    </div>
+    <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="video-link">
+            <svg class="play-icon beginner" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <div class="video-content">
+                <p class="video-title beginner">Функции и передача параметров</p>
+                <p class="video-duration">30 мин</p>
+            </div>
+            <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+        </a>
+    </div>
+    <div class="video-card">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="video-link">
+            <svg class="play-icon beginner" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <div class="video-content">
+                <p class="video-title beginner">Массивы и векторы в C++</p>
+                <p class="video-duration">35 мин</p>
+            </div>
+            <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+        </a>
+    </div>
+</div>
+</div>
+
+<div>
+    <h3 class="section-title olympiad">Олимпиадные задачи</h3>
+    <div class="video-list">
+        <div class="video-card">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="video-link">
+                <svg class="play-icon olympiad" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <div class="video-content">
+                    <p class="video-title olympiad">STL в C++ для олимпиад (vector, set, map)</p>
+                    <p class="video-duration">48 мин</p>
+                </div>
+                <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="video-link">
+                <svg class="play-icon olympiad" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <div class="video-content">
+                    <p class="video-title olympiad">Алгоритмы на строках - KMP, Z-функция</p>
+                    <p class="video-duration">52 мин</p>
+                </div>
+                <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="video-link">
+                <svg class="play-icon olympiad" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <div class="video-content">
+                    <p class="video-title olympiad">Динамическое программирование на C++</p>
+                    <p class="video-duration">58 мин</p>
+                </div>
+                <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="video-link">
+                <svg class="play-icon olympiad" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <div class="video-content">
+                    <p class="video-title olympiad">Структуры данных - Дерево отрезков</p>
+                    <p class="video-duration">60 мин</p>
+                </div>
+                <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="video-link">
+                <svg class="play-icon olympiad" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <div class="video-content">
+                    <p class="video-title olympiad">Алгоритмы на графах - Дейкстра, Флойд</p>
+                    <p class="video-duration">55 мин</p>
+                </div>
+                <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+            </a>
+        </div>
+        <div class="video-card">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="video-link">
+                <svg class="play-icon olympiad" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <div class="video-content">
+                    <p class="video-title olympiad">Продвинутые техники оптимизации кода</p>
+                    <p class="video-duration">45 мин</p>
+                </div>
+                <svg class="external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <p>© 2026 Олимпиадное программирование - Telegram Bot</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
