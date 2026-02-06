@@ -1,20 +1,20 @@
 #include <tgbot/tgbot.h>
 
 int main() {
-    TgBot::Bot bot("¬¿ÿ_“Œ ≈Õ");
+    TgBot::Bot bot("–¢–û–ö–ï–ù");
 
     bot.getEvents().onCommand("start", [&bot](auto msg) {
         auto kb = std::make_shared<TgBot::InlineKeyboardMarkup>();
         TgBot::InlineKeyboardButton::Ptr btn(new TgBot::InlineKeyboardButton);
-        btn->text = "Õ‡ÊÏË!";
-        btn->callbackData = "click";
+        btn->text = "–ü—Ä–∏–≤–µ—Ç!";
+        btn->callbackData = "–ù–∞–∂–º–∏";
         kb->inlineKeyboard.push_back({ btn });
 
-        bot.getApi().sendMessage(msg->chat->id, "œË‚ÂÚ!", false, 0, kb);
+        bot.getApi().sendMessage(msg->chat->id, "!", false, 0, kb);
         });
 
     bot.getEvents().onCallbackQuery([&bot](auto q) {
-        bot.getApi().answerCallbackQuery(q->id, "“˚ Ì‡Ê‡Î!");
+        bot.getApi().answerCallbackQuery(q->id, "√í√ª √≠√†√¶√†√´!");
         });
 
     TgBot::TgLongPoll poll(bot);
