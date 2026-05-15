@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Олимпиадное программирование -Дополнительные материалы к боту</title>
+    <style>
+        body {
+            background-color: rgb(218, 218, 218);
+            text-align: center;
+             padding: 50px;
+            font-family: Georgia, serif;
+            font-weight: 700;
+            line-height: 1.6;
+        }
+        header, main, footer {
+            max-width: 800px;
+            margin: 0 auto;
+        } 
+        h1, h2, h3, p, div {
+            text-align: center;
+            font-family: American Typewriter, serif;
+        }
+        a {
+            display: block;
+            margin: 12px 0;
+            color: #3c6879;
+            padding: 6px 0;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        section {
+            margin: 50px 0;
+        }
+        .video-item {
+            margin: 18px 0;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        h2 {
+            margin: 30px 0 20px 0;
+        }
+        h3 {
+            margin: 25px 0 15px 0;
+        }
+        p {
+            margin: 15px 0;
+        }
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        div > h3 {
+            margin-top: 35px;
+        }
+        h4 {
+            margin: -16px 0 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Олимпиадное программирование</h1>
+        <p>Дополнительные материалы к Telegram-боту</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Видеоуроки по программированию</h2>
+            <p>Подборка материалов по Python и C++ для подготовки к олимпиадам</p>
+        </section>
+
+
+        
+        
+        
+        <section>
+            <h2>Python</h2>
+            
+            <div>
+                <h3>Основы Python</h3>
+                <div class="video-item">
+                    <a href="https://youtu.be/h1IqgaZBi-8?si=3glIR5orbdGjDgYW" target="_blank">
+                        Установка Python и настройка среды  
+                    </a>
+                     <h4>(-- мин)</h4>
+                    
+                </div>
+                <div class="video-item">
+                    <a href="https://youtu.be/DZvNZ9l9NT4?si=lm5i_jdfQdkUCPVD" target="_blank">
+                        Переменные, типы данных и операции
+                    </a>
+                     <h4>(-- мин)</h4>
+                </div>
+                <div class="video-item">
+                    <a href="https://youtu.be/vMD6-jzgDvI?si=t_sJXFkWFI_IxoRh" target="_blank">
+                        Условные операторы и циклы 
+                    </a>
+                     <h4>(-- мин)</h4>
+                </div>
+            </div>
+            
+            <div>
+                <h3>Олимпиадные задачи</h3>
+                <div class="video-item">
+                    <a href="https://youtu.be/qwgjFDbInao?si=5tV4doMku-2ZGp7G" target="_blank">
+                        Сортировки и бинарный поиск в задачах
+                    </a>
+                     <h4>(-- мин)</h4>
+                </div>
+                <div class="video-item">
+                    <a href="https://youtu.be/SuwL6BYIfQM?si=lm_4KwS8Nz7XZfg5" target="_blank">
+                        Динамическое программирование
+                    </a>
+                     <h4>(-- мин)</h4>
+                </div>
+                <div class="video-item">
+                    <a href="https://youtu.be/B21nJhU4x3A?si=WPnPE_E1M242hE96" target="_blank">
+                        Обход графов (DFS и BFS) на Python 
+                    </a>
+                     <h4>(-- мин)</h4>
+                </div>
+            </div>
+        </section>
+            <div>
+                <h3>Олимпиадный C++</h3>
+                <div class="video-item">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                    STL: vector, set, map для олимпиад 
+                    </a>
+                    <h4>(-- мин)</h4>
+                </div>
+                <div class="video-item">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                        Динамическое программирование в C++
+                    </a>
+                     <h4>(-- мин)</h4>
+                </div>
+               <div class="video-item">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                        Алгоритмы на графах и оптимизация
+                    </a>
+                     <h4>(-- мин)</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+     <p>© Олимпиадное программирование </p>
+    </footer>
+</body>
+</html>
